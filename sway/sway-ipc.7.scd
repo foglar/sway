@@ -326,7 +326,7 @@ node and will have the following properties:
 |- layout
 :  string
 :  The node's layout. It can either be _splith_, _splitv_, _stacked_,
-   _tabbed_, or _output_
+   _tabbed_, _dwindle_, or _output_
 |- orientation
 :  string
 :  The node's orientation. It can be _vertical_, _horizontal_, or _none_

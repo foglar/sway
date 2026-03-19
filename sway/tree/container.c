@@ -781,6 +781,9 @@ size_t container_build_representation(enum sway_container_layout layout,
 	case L_STACKED:
 		lenient_strcat(buffer, "S[");
 		break;
+	case L_DWINDLE:
+		lenient_strcat(buffer, "W[");
+		break;
 	case L_NONE:
 		lenient_strcat(buffer, "D[");
 		break;

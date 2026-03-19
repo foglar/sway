@@ -17,14 +17,16 @@ static enum sway_container_layout parse_layout_string(char *s) {
 		return L_TABBED;
 	} else if (strcasecmp(s, "stacking") == 0) {
 		return L_STACKED;
+	} else if (strcasecmp(s, "dwindle") == 0) {
+		return L_DWINDLE;
 	}
 	return L_NONE;
 }
 
 static const char expected_syntax[] =
-	"Expected 'layout default|tabbed|stacking|splitv|splith' or "
+	"Expected 'layout default|tabbed|stacking|splitv|splith|dwindle' or "
 	"'layout toggle [split|all]' or "
-	"'layout toggle [split|tabbed|stacking|splitv|splith] [split|tabbed|stacking|splitv|splith]...'";
+	"'layout toggle [split|tabbed|stacking|splitv|splith|dwindle] [split|tabbed|stacking|splitv|splith|dwindle]...'";
 
 static enum sway_container_layout toggle_split_layout(
 		enum sway_container_layout layout,
@@ -62,7 +64,8 @@ static enum sway_container_layout get_layout_toggle(int argc, char **argv,
 		if (strcasecmp(argv[1], "all") == 0) {
 			return layout == L_HORIZ ? L_VERT :
 				layout == L_VERT ? L_STACKED :
-				layout == L_STACKED ? L_TABBED : L_HORIZ;
+				layout == L_STACKED ? L_TABBED :
+				layout == L_TABBED ? L_DWINDLE : L_HORIZ;
 		}
 		return L_NONE;
 	}

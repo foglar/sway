@@ -234,6 +234,9 @@ static void arrange_children(list_t *children,
 	case L_STACKED:
 		apply_stacked_layout(children, parent);
 		break;
+	case L_DWINDLE:
+		apply_horiz_layout(children, parent);
+		break;
 	case L_NONE:
 		apply_horiz_layout(children, parent);
 		break;
