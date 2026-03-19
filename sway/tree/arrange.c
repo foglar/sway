@@ -211,10 +211,6 @@ static void apply_stacked_layout(list_t *children, struct wlr_box *parent) {
 	}
 }
 
-static void apply_dwindle_layout(list_t *children, struct wlr_box *parent) {
-	apply_horiz_layout(children, parent);
-}
-
 static void arrange_floating(list_t *floating) {
 	for (int i = 0; i < floating->length; ++i) {
 		struct sway_container *floater = floating->items[i];
@@ -239,7 +235,7 @@ static void arrange_children(list_t *children,
 		apply_stacked_layout(children, parent);
 		break;
 	case L_DWINDLE:
-		apply_dwindle_layout(children, parent);
+		apply_horiz_layout(children, parent);
 		break;
 	case L_NONE:
 		apply_horiz_layout(children, parent);
