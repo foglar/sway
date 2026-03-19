@@ -175,7 +175,7 @@ set|plus|minus|toggle <amount>
 	This can also be used with criteria to set an idle inhibitor for any
 	existing window or with _for_window_ to set idle inhibitors for future windows.
 
-*layout* default|splith|splitv|stacking|tabbed
+*layout* default|splith|splitv|stacking|tabbed|dwindle
 	Sets the layout mode of the focused container.
 
 	When using the _stacking_ layout, only the focused window in the container is
@@ -190,7 +190,7 @@ set|plus|minus|toggle <amount>
 	and the last split layout. If _split_ is given, then it cycles through
 	splith and splitv. If _all_ is given, then it cycles through every layout.
 
-*layout* toggle [split|tabbed|stacking|splitv|splith] [split|tabbed|stacking|splitv|splith]...
+*layout* toggle [split|tabbed|stacking|splitv|splith|dwindle] [split|tabbed|stacking|splitv|splith|dwindle]...
 	Cycles the layout mode of the focused container through a list of layouts.
 
 *max_render_time* off|<msec>
